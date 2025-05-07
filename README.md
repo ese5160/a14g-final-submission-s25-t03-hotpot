@@ -126,7 +126,7 @@ HRS 01 - Project shall be based on SAMW25 microcontroller operating at 3.7-4.2V 
 
 HRS 02 - A 7-inch LCD should be used for user interface. 
 
-HRS 03 - An IMU shall communicate via I2C bus for shake detection and gaming input.It should quickly react after reaching 8 shakes.
+HRS 03 - An IMU shall communicate via I2C bus for shake detection and gaming input. It should quickly react after reaching 8 shakes.
 
 HRS 04 - A light sensor shall communicate via I2C bus for ambient light detection with range 1-2400.
 
