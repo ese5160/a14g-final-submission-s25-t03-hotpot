@@ -7,6 +7,10 @@
     * Github Repository URL: https://github.com/ese5160/a14g-final-submission-s25-t03-hotpot.git
     * Description of test hardware: SAMW25
 
+## 0. Pages
+
+https://ese5160.github.io/a14g-final-submission-s25-t03-hotpot/
+
 ## 1. Video Presentation
 
 Please refer to the link below:
