@@ -37,7 +37,7 @@ https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share
 
     Sensors:
     Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
-    IMU: ADXL345BCCZ that senses actions to stop the alarm
+    IMU: ADXL345 that senses actions to stop the alarm
     RTC: DS3231MZ+TRL for real time clock
     Buttons: 2 B3F-1070 to scroll the main menu
 
