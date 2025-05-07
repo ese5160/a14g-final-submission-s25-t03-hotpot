@@ -161,6 +161,54 @@ Though there are some changes to the original requirements, all these HRS have b
 
 ## 4. Project Photos & Screenshots
 
+- Final Project:
+
+![alt text](image-1.png)
+
+- PCBA top:
+
+![alt text](image-2.png)
+
+- PCBA bottom:
+
+![alt text](image-3.png)
+
+- PCBA running under load:
+
+![alt text](image-4.png)
+
+- The Altium Board design in 2D view:
+
+![alt text](image-5.png)
+
+- The Altium Board design in 3D view:
+
+![alt text](image-6.png)
+
+- Node-RED dashboard:
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
+![alt text](image-11.png)
+
+- Node-RED backend:
+
+![alt text](image-12.png)
+
+![alt text](image-13.png)
+
+![alt text](image-14.png)
+
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
 ## Codebase
 
 - A link to your final embedded C firmware codebases: 
