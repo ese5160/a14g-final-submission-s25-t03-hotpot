@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Smart Alarm Clock</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Roboto", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f6f8;
+      background: linear-gradient(to bottom right, #e6f0ff, #f9f9f9);
       color: #333;
       line-height: 1.6;
     }
@@ -17,6 +19,11 @@
       color: white;
       padding: 2rem;
       text-align: center;
+    }
+    header h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
     main {
       max-width: 960px;
@@ -37,6 +44,7 @@
       color: #2c3e50;
       border-bottom: 2px solid #ddd;
       padding-bottom: 0.5rem;
+      font-family: "Montserrat", sans-serif;
     }
     ul {
       padding-left: 1.5rem;
@@ -58,8 +66,8 @@
 </head>
 <body>
   <header>
-    <h1>Smart Alarm Clock Final Project</h1>
-    <p>Intelligent alarm with world clock, weather, to-do list, and ambient light detection</p>
+    <h1>ESE5160 Final Project: Smart Alarm Clock</h1>
+    <p>T03 - Super Hotpot</p>
   </header>
   <main>
     <section>
@@ -69,18 +77,17 @@
     <section>
       <h2>📋 Project Summary</h2>
       <p>This project is an Internet-connected smart alarm clock that displays world time, weather updates, countdowns, and personalized to-do lists on an LCD screen. It features ambient light detection to turn on a light when it's dark.</p>
-      <p>It uses a Wi-Fi-enabled microcontroller to communicate with a Node-RED dashboard for real-time data display and control.</p>
-    </section>
+      <p>We were inspired by the fact that as lazy people, we struggle to achieve self-discipline in our lives, and designed this alarm clock to help people turn off their alarms with some movement and leave their phones to study and work at regular intervals.The device connects to the Internet via Wi-Fi and communicates with a Node-RED dashboard to receive real-time weather data, synchronize time zones, and fetch task lists—enhancing its utility far beyond a conventional alarm clock.<p>
     <section>
       <h2>🔧 Key Components</h2>
       <ul>
         <li><strong>MCU:</strong> SAMW25</li>
-        <li><strong>Display:</strong> RA8875 7" TFT LCD</li>
+        <li><strong>LCD Display:</strong> RA8875 7" TFT LCD</li>
         <li><strong>RTC:</strong> DS3231</li>
-        <li><strong>Light Sensor:</strong> PDV-P8103</li>
+        <li><strong>Light Sensor:</strong> PDV-P8103 photoresistor</li>
         <li><strong>IMU:</strong> ADXL345</li>
-        <li><strong>Actuators:</strong> Buzzer, LED</li>
-        <li><strong>Input:</strong> Two buttons</li>
+        <li><strong>Buzzer:</strong> SMT-0540-S-R</li>
+        <li><strong>Buttons:</strong> B3F-1070 x 2</li>
       </ul>
       <img src="image.png" alt="System Block Diagram">
     </section>
