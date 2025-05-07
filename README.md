@@ -211,7 +211,7 @@ Though there are some changes to the original requirements, all these HRS have b
 
 ## Codebase
 
-- A link to your final embedded C firmware codebases: 
+- A link to your final embedded C firmware codebases: https://github.com/LixiJiang/T03_Codebase.git
 - A link to your Node-RED dashboard code: http://74.235.31.208:1880
 - Links to any other software required for the functionality of your device: None
 
