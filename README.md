@@ -27,18 +27,19 @@ https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share
     The smart alarm clock uses a Wi-Fi-enabled microcontroller to receive data from a Node-RED server and display it on an LCD screen. Users can interact with the system remotely through a web dashboard.
 
     Key components:
-        Microcontroller: SAMW25 for Wi-Fi and peripheral control
+    
+    Microcontroller: SAMW25 for Wi-Fi and peripheral control
 
-        Actuators:
-        LCD Display: RA8875 driver-based TFT for visual output
-        Buzzer: SMT-0540-S-R for audible alarms
-        LED: Lights up when darkness is sensed
+    Actuators:
+    LCD Display: RA8875 driver-based TFT for visual output
+    Buzzer: SMT-0540-S-R for audible alarms
+    LED: Lights up when darkness is sensed
 
-        Sensors:
-        Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
-        IMU: ADXL345BCCZ that senses actions to stop the alarm
-        RTC: DS3231MZ+TRL for real time clock
-        Buttons: 2 B3F-1070 to scroll the main menu
+    Sensors:
+    Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
+    IMU: ADXL345BCCZ that senses actions to stop the alarm
+    RTC: DS3231MZ+TRL for real time clock
+    Buttons: 2 B3F-1070 to scroll the main menu
 
     System Block Diagram:
     
@@ -208,6 +209,10 @@ Though there are some changes to the original requirements, all these HRS have b
 ![alt text](image-15.png)
 
 ![alt text](image-16.png)
+
+- System Block Diagram:
+    
+![alt text](image.png)
 
 ## Codebase
 
