@@ -1,11 +1,108 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ESE 5160 - T03 Super Hotpot</title>
+  <meta charset="UTF-8">
+  <title>Smart Alarm Clock</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    section {
+      padding: 2rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+    }
+    a {
+      color: #3498db;
+    }
+    .links a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Smart alarm clock</h1>
-  <p>This is a demo page for my final project: smart alarm clock.</p>
+  <header>
+    <h1>Smart Alarm Clock Final Project</h1>
+    <p>Intelligent alarm with world clock, weather, to-do list, and ambient light detection</p>
+  </header>
+  <main>
+    <section>
+      <h2>🎥 Video Presentation</h2>
+      <p><a href="https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share_link" target="_blank">Click here to watch the demo</a></p>
+    </section>
+    <section>
+      <h2>📋 Project Summary</h2>
+      <p>This project is an Internet-connected smart alarm clock that displays world time, weather updates, countdowns, and personalized to-do lists on an LCD screen. It features ambient light detection to turn on a light when it's dark.</p>
+      <p>It uses a Wi-Fi-enabled microcontroller to communicate with a Node-RED dashboard for real-time data display and control.</p>
+    </section>
+    <section>
+      <h2>🔧 Key Components</h2>
+      <ul>
+        <li><strong>MCU:</strong> SAMW25</li>
+        <li><strong>Display:</strong> RA8875 7" TFT LCD</li>
+        <li><strong>RTC:</strong> DS3231</li>
+        <li><strong>Light Sensor:</strong> PDV-P8103</li>
+        <li><strong>IMU:</strong> ADXL345</li>
+        <li><strong>Actuators:</strong> Buzzer, LED</li>
+        <li><strong>Input:</strong> Two buttons</li>
+      </ul>
+      <img src="image.png" alt="System Block Diagram">
+    </section>
+    <section>
+      <h2>🖼 Project Images</h2>
+      <img src="image-1.png" alt="Final Project">
+      <img src="image-2.png" alt="PCBA Top">
+      <img src="image-3.png" alt="PCBA Bottom">
+      <img src="image-4.png" alt="Running Test">
+      <img src="image-5.png" alt="2D Board Design">
+      <img src="image-6.png" alt="3D Board Design">
+      <img src="image-7.png" alt="Node-RED Dashboard">
+      <img src="image-12.png" alt="Node-RED Backend">
+    </section>
+    <section>
+      <h2>🔗 Project Links</h2>
+      <div class="links">
+        <a href="http://74.235.31.208:1880/ui/" target="_blank">Node-RED Dashboard</a>
+        <a href="https://upenn-eselabs.365.altium.com/designs/2B2CFE7D-2491-4D54-B94B-FC7E0FEBA2F1#design" target="_blank">Altium PCBA Design</a>
+        <a href="https://github.com/LixiJiang/T03_Codebase" target="_blank">Embedded Codebase</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
