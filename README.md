@@ -15,8 +15,7 @@
 ## 1. Video Presentation
 
 Please refer to the link below:
-[Project Video Demo](https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share_link)
-
+[Project Video Demo](https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=sharing)
 
 ## 2. Project Summary
 
@@ -29,7 +28,7 @@ Please refer to the link below:
   The device connects to the Internet via Wi-Fi and communicates with a Node-RED dashboard to receive real-time weather data, synchronize time zones, and fetch task lists—enhancing its utility far beyond a conventional alarm clock.
 ### Device Functionality：
 
-  The smart alarm clock uses a Wi-Fi-enabled microcontroller to receive data from a Node-RED server and display it on an LCD screen. Users can interact with the system remotely through a web dashboard.
+  The smart alarm clock uses a Wi-Fi-enabled microcontroller to receive data from a Node-RED server and display it on an LCD screen. Users can interact with the system remotely through a web dashboard, such as setting alarms, setting todo lists, selecting which city's weather wants to show on the LCD and so on.
 
   **Key components:**
 
@@ -38,15 +37,20 @@ Please refer to the link below:
   **Actuators:**
 
   LCD Display: RA8875 driver-based TFT for visual output
-  Buzzer: SMT-0540-S-R for audible alarms
+
+  Buzzer: SMT-0540-S-R for audible alarms and notifications
+
   LED: Lights up when darkness is sensed
 
   **Sensors:**
 
   Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
+
   IMU: ADXL345 that senses actions to stop the alarm
-  RTC: DS3231MZ+TRL for real time clock
-  Buttons: 2 B3F-1070 to scroll the main menu
+
+  RTC: DS3231MZ+TRL for real time clock and alarm settings
+
+  Buttons: 2 B3F-1070 to scrolling and selecting
 
   **System Block Diagram:**
 
