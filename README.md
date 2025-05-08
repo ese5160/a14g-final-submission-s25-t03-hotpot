@@ -1,130 +1,142 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AlBFWSQg)
+
 # a14g-final-submission
 
     * Team Number: 03
     * Team Name: Super Hotpot
-    * Team Members: Jinyu Hua, Lixi Jiang
+    * Team Members: Jingyu Hua, Lixi Jiang
     * Github Repository URL: https://github.com/ese5160/a14g-final-submission-s25-t03-hotpot.git
-    * Description of test hardware: SAMW25
+    * Description of test hardware: SAMW25, Laptop
 
 ## 0. Pages
 
-https://ese5160.github.io/a14g-final-submission-s25-t03-hotpot/
+[T03 Super Hotpot](https://ese5160.github.io/a14g-final-submission-s25-t03-hotpot/)
 
 ## 1. Video Presentation
 
 Please refer to the link below:
-https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share_link
+[Project Video Demo](https://drive.google.com/file/d/1GpJeau-O78zI6oE7ogSVTM1Llvrdl-aD/view?usp=share_link)
+
 
 ## 2. Project Summary
 
-- Device description:
+### Device description:
 
-    This project is an Internet-connected smart alarm clock that displays world time, weather updates, countdowns, and personalized to-do lists on an LCD screen. It also features an ambient light sensor to automatically turn on a light when the environment is dark.
+  This project is an Internet-connected smart desktop clock that displays world time, weather updates, countdowns, and personalized alarms and to-do lists on an LCD screen. It also features an ambient light sensor to automatically turn on a light when the environment is dark.
 
-    We were inspired by the fact that as lazy people, we struggle to achieve self-discipline in our lives, and designed this alarm clock to help people turn off their alarms with some movement and leave their phones to study and work at regular intervals.
+  We were inspired by the fact that as lazy people, we struggle to achieve self-discipline in our lives, and designed this alarm clock to help people turn off their alarms with some movement and leave their phones to study and work at regular intervals.
 
-    The device connects to the Internet via Wi-Fi and communicates with a Node-RED dashboard to receive real-time weather data, synchronize time zones, and fetch task lists—enhancing its utility far beyond a conventional alarm clock.
+  The device connects to the Internet via Wi-Fi and communicates with a Node-RED dashboard to receive real-time weather data, synchronize time zones, and fetch task lists—enhancing its utility far beyond a conventional alarm clock.
+### Device Functionality：
 
-- Device Functionality：
+  The smart alarm clock uses a Wi-Fi-enabled microcontroller to receive data from a Node-RED server and display it on an LCD screen. Users can interact with the system remotely through a web dashboard.
 
-    The smart alarm clock uses a Wi-Fi-enabled microcontroller to receive data from a Node-RED server and display it on an LCD screen. Users can interact with the system remotely through a web dashboard.
+  **Key components:**
 
-    Key components:
-    
-    Microcontroller: SAMW25 for Wi-Fi and peripheral control
+  Microcontroller: SAMW25 for Wi-Fi and peripheral control
 
-    Actuators:
-    LCD Display: RA8875 driver-based TFT for visual output
-    Buzzer: SMT-0540-S-R for audible alarms
-    LED: Lights up when darkness is sensed
+  **Actuators:**
 
-    Sensors:
-    Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
-    IMU: ADXL345 that senses actions to stop the alarm
-    RTC: DS3231MZ+TRL for real time clock
-    Buttons: 2 B3F-1070 to scroll the main menu
+  LCD Display: RA8875 driver-based TFT for visual output
+  Buzzer: SMT-0540-S-R for audible alarms
+  LED: Lights up when darkness is sensed
 
-    System Block Diagram:
-    
-    ![alt text](image.png)
+  **Sensors:**
 
-- Challenges:
+  Light Sensor: PDV-P8103 photoresistor to detect ambient brightness to trigger lighting
+  IMU: ADXL345 that senses actions to stop the alarm
+  RTC: DS3231MZ+TRL for real time clock
+  Buttons: 2 B3F-1070 to scroll the main menu
 
-    Hardware:
-    
-    1. We did not really considered the limited space of the physical board that we cannot fit in all the components at first.
-    - We rearranged everything ont the board, spending extra time.
+  **System Block Diagram:**
 
-    2. One of our board has manufacturer issue with USB.
-    - We gave up the board for final submission, only used it for testing.
+  ![alt text](image.png)
+### Challenges:
 
-    3. Two of our boards' ADC were not working.
-    - We gave up the boards and only used them for testing.
+  **Hardware:**
 
-    4. We planned 3 buttons at first and randomly chose 3 GPIO, but it turned out that two of them are actually using the same external interrupt channel.
-    - We changed our user design. We were planning one button for scrolling to right, one to left and one to click to choose. We deleted the leftward function and everything worked well.
+  1. We did not really considered the limited space of the physical board that we cannot fit in all the components at first.
 
+  - We rearranged everything ont the board, spending extra time.
 
-    Firmware:
+  2. One of our board has manufacturer issue with USB.
 
-    1. The I2C was not working correctly with Wifi at first.
-    - A small delay in the given code is added, and everything worked well after that.
+  - We gave up the board for final submission, only used it for testing.
 
-    2. The LCD was totally new to us and we have no idea how to light it up.
-    - We read the datasheet and made codebase for the LCD on our own. The LCD is actually the biggest problem in our project. In this process, we encountered a lot of problems like stack overflow and the missions simply get stuck. We tried many methods, like DMA and changing priorities. We are glad that the LCD finally worked well at last.
+  3. Two of our boards' ADC were not working.
 
-    3. We had problem with expanding our clock to a world clock.
-    - We learned to use API and the problem was solved at last.
+  - We gave up the boards and only used them for testing.
 
-    Intergration:
+  4. We planned 3 buttons at first and randomly chose 3 GPIO, but it turned out that two of them are actually using the same external interrupt line.
 
-    1. The LED Strip we planed to use was actually a SPI communication, and it needs a logic shifter for it needs a 4.2V signal while our MCU only gives a 3.3V output.
-    - We changed it to a normal LED. We used to solder a logic shifter to our board but it made intergration very hard and the new SPI is kind of unstable and mess up with everything else. 
+  - We changed our user design. We were planning one button for scrolling to right, one to left and one to click to choose. We deleted the leftward function and everything worked well.
 
-- Prototype Learning:
+  **Firmware:**
 
-    What good things that were done:
+  1. The I2C was not working correctly with Wifi at first.
 
-    We are glad that I2C debugging connectors were added to our board and we did not gave them up to fit in evrything. This really helped a lot while we were debugging. We also added enough test points to our board so that we can easily find issues on our boards. Our final outer box for this project is also nicely done with 3D printing, which taught us a lot on Solidworks designings.
+  - A small delay in the given code is added, and everything worked well after that.
 
-    What we should improve:
+  2. The LCD was totally new to us and we have no idea how to light it up.
 
-    We regret that we did not leave a hole for our debugger line to go through on the outer box. We should have made use of idle pins on the MCU so that we can still hold onto our button functions. 
+  - We read the datasheet and made codebase for the LCD on our own. The LCD is actually the biggest problem in our project. In this process, we encountered a lot of problems like stack overflow and the missions simply get stuck. We tried many methods, like DMA and changing priorities. We are glad that the LCD finally worked well at last.
 
-    Overall we did a great job on prototype. But for if we have to build the device again for improvement, we will focus more on debugging. First, we will read datasheet more carefully. All these mistakes can be fixed by simply understanding the datasheet more deeply. Secondly, we will leave a way for our debugger line to go through, sothat we can rely more on the terminal to debug.
+  3. We had problem with expanding our clock to a world clock.
 
-- Next Steps & Takeaways:
+  - We learned to use API and the problem was solved at last.
 
-    To improve the project:
+  **Intergration:**
 
-    We need to complete the OTAFU part. Though we can do it seperately through our code, it conflicts with following process if we intergrate them together. We can also try to make use of the LED Strip, find a faster logic shifter and try again. 
+  1. The LED Strip we planed to use was actually a SPI communication, and it needs a logic shifter for it needs a 4.2V signal while our MCU only gives a 3.3V output.
 
-    What did we learn:
+  - We changed it to a normal LED. We used to solder a logic shifter to our board but it made intergration very hard and the new SPI is kind of unstable and mess up with everything else.
 
-    Skills:
+  2. A SPI configuration conflict was identified between the WiFi task and the LCD task, which caused the LCD to stop functioning when the WiFi task was active.
 
-    Over the course of the semester, we gained a wide range of practical skills. We learned how to design printed circuit boards (PCBs) using Altium Designer and acquired foundational knowledge of FreeRTOS. We also developed strong hardware and software debugging skills — including how to use a logic analyzer, how to debug firmware effectively, and how to write code in a way that simplifies future debugging. In addition, we became more proficient at reading and interpreting datasheets, which was essential for understanding component specifications and integration. Although it wasn’t required, we also explored 3D modeling with SolidWorks, which proved to be extremely useful for prototyping and enclosure design
+  - To resolve this issue, we added a SPI configuration restore routine at the beginning of the LCD task and introduced a mutex to prevent concurrent access and avoid further conflicts.
 
-    Life Experience:
+### Prototype Learning:
 
-    Throughout the semester, we gained valuable experience in teamwork. Most of our assignments were completed collaboratively, and we often debugged and problem-solved together. We both received and offered help to our classmates, which fostered a strong sense of community. This experience truly taught us the meaning of “teamwork makes the dream work.” Moreover, we realized that kindness goes a long way — by being kind and supportive, we received the same in return. It was incredibly rewarding to be surrounded by so many kind and helpful people, including our TAs, professor and classmates.
+  **What good things that were done:**
 
+  We are glad that I2C debugging connectors were added to our board and we did not gave them up to fit in evrything. This really helped a lot while we were debugging. We also added enough test points to our board so that we can easily find issues on our boards. Our final outer box for this project is also nicely done with 3D printing, which taught us a lot on Solidworks designings.
+
+  **What we should improve:**
+
+  We regret that we did not leave a hole for our debugger line to go through on the outer box. We should have made use of idle pins on the MCU so that we can still hold onto our button functions.
+
+  Overall we did a great job on prototype. But for if we have to build the device again for improvement, we will focus more on debugging. First, we will read datasheet more carefully. All these mistakes can be fixed by simply understanding the datasheet more deeply. Secondly, we will leave a way for our debugger line to go through, sothat we can rely more on the terminal to debug.
+
+### Next Steps & Takeaways:
+
+  **To improve the project:**
+
+  We need to optimize the OTAFU part. Though we had it done seperately through our code, it may conflict with following process randomly if we intergrate them together. We can also try to make use of the LED Strip, find a faster logic shifter and try again.
+
+  **What did we learn:**
+
+  Skills:
+
+  Over the course of the semester, we gained a wide range of practical skills. We learned how to design printed circuit boards (PCBs) using Altium Designer and acquired foundational knowledge of FreeRTOS. We also developed strong hardware and software debugging skills — including how to use a logic analyzer, how to debug firmware effectively, and how to write code in a way that simplifies future debugging. In addition, we became more proficient at reading and interpreting datasheets, which was essential for understanding component specifications and integration. Although it wasn’t required, we also explored 3D modeling with SolidWorks, which proved to be extremely useful for prototyping and enclosure design
+
+  Life Experience:
+
+  Throughout the semester, we gained valuable experience in teamwork. Most of our assignments were completed collaboratively, and we often debugged and problem-solved together. We both received and offered help to our classmates, which fostered a strong sense of community. This experience truly taught us the meaning of “teamwork makes the dream work.” Moreover, we realized that kindness goes a long way — by being kind and supportive, we received the same in return. It was incredibly rewarding to be surrounded by so many kind and helpful people, including our TAs, professor and classmates.
 - Project Links:
 
 For Node-Red Dashboard:
-http://74.235.31.208:1880/ui/
+[T03 Node-Red](http://74.235.31.208:1880/ui/)
 
 For final PCBA:
-https://upenn-eselabs.365.altium.com/designs/2B2CFE7D-2491-4D54-B94B-FC7E0FEBA2F1#design
+[T03 PCBA](https://upenn-eselabs.365.altium.com/designs/2B2CFE7D-2491-4D54-B94B-FC7E0FEBA2F1#design)
 
 ## 3. Hardware & Software Requirements
 
-Hardware Requirements Specification (HRS):
+**Hardware Requirements Specification (HRS):**
 
 HRS 01 - Project shall be based on SAMW25 microcontroller operating at 3.7-4.2V from Li-Ion battery.
 
-HRS 02 - A 7-inch LCD should be used for user interface. 
+HRS 02 - A 7-inch LCD should be used for user interface.
 
 HRS 03 - An IMU shall communicate via I2C bus for shake detection and gaming input. It should quickly react after reaching 8 shakes.
 
@@ -134,15 +146,15 @@ HRS 05 - A LED shall provide ambient lighting, controlled by single GPIO pin.
 
 HRS 06 - Two tactile buttons shall connect directly to GPIO pins for user input. It should react within 0.5s after being pressed.
 
-HRS 07 - System shall include battery management and voltage regulation circuitry(3.3V buck and 5V buck-boost) for 3.7V Li-Ion battery. 
+HRS 07 - System shall include battery management and voltage regulation circuitry(3.3V buck and 5V buck-boost) for 3.7V Li-Ion battery.
 
 HRS 08 - A buzzer shall be used for alarm. It should be reacting in 0.5s.
 
 HRS 09 - DS3231 RTC module shall communicate via I2C bus for accurate timekeeping. After a 4 hour test, it should be the same as the real time.
 
-Though there are some changes to the original requirements, all these HRS have been met. All the 0.5s reaction time were included as 'waiting time can not be sensed by human' in our projects. The real time clock was tested to be running stably after 4 hours, with correct current time and pace.
+*Though there are some changes to the original requirements, all these HRS have been met. All the 0.5s reaction time were included as 'waiting time can not be sensed by human' in our projects. The real time clock was tested to be running stably after 4 hours, with correct current time and pace.*
 
-Software Requirements Specification (SRS):
+**Software Requirements Specification (SRS):**
 
 SRS 01 - The system shall display the current time fetched from the RTC module.
 
@@ -162,13 +174,19 @@ SRS 08 - The system shall respond to user input within 0.5s.
 
 SRS 09 - Alarm and timer accuracy shall be within 1 second.
 
-Though there are some changes to the original requirements, all these HRS have been met. All the 0.5s reaction time were included as 'waiting time can not be sensed by human' in our projects. Other general requirements can be valued by bare eyes.
+*Though there are some changes to the original requirements, all these SRS have been met. All the 0.5s reaction time were included as 'waiting time can not be sensed by human' in our projects. Other general requirements can be valued by bare eyes.*
 
 ## 4. Project Photos & Screenshots
 
 - Final Project:
 
 ![alt text](image-1.png)
+
+![1746658305436](image/README/1746658305436.png)
+
+![1746658320144](image/README/1746658320144.png)
+
+![1746658332378](image/README/1746658332378.png)
 
 - PCBA top:
 
@@ -192,35 +210,45 @@ Though there are some changes to the original requirements, all these HRS have b
 
 - Node-RED dashboard:
 
-![alt text](image-7.png)
+![alt text](image-9.png)
+
+![1746657804425](image/README/1746657804425.png)
 
 ![alt text](image-8.png)
 
-![alt text](image-9.png)
 
 ![alt text](image-10.png)
 
-![alt text](image-11.png)
+![1746657869317](image/README/1746657869317.png)
 
 - Node-RED backend:
 
-![alt text](image-12.png)
+Home page:
 
-![alt text](image-13.png)
+![1746658068748](image/README/1746658068748.png)
 
-![alt text](image-14.png)
+System settings page:
 
-![alt text](image-15.png)
+![1746658103454](image/README/1746658103454.png)
 
-![alt text](image-16.png)
+Alarm page:
+
+![1746658137651](image/README/1746658137651.png)
+
+Todo list page:
+
+![1746658153344](image/README/1746658153344.png)
+
+Pomodoro timer page:
+
+![1746658181269](image/README/1746658181269.png)
 
 - System Block Diagram:
-    
+
 ![alt text](image.png)
 
 ## Codebase
 
-- A link to your final embedded C firmware codebases: https://github.com/LixiJiang/T03_Codebase.git
-- A link to your Node-RED dashboard code: http://74.235.31.208:1880
+- A link to your final embedded C firmware codebases: [T03 Codebase](https://github.com/ese5160/final-project-t03-hotpot.git)
+- A link to your Node-RED dashboard code: [T03 Node-RED dashboard](http://74.235.31.208:1880)
 - Links to any other software required for the functionality of your device: None
-
